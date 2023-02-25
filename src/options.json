@@ -2,7 +2,14 @@
   "type": "object",
   "properties": {
     "name": {
-      "type": "string",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "instanceof": "Function"
+        }
+      ],
       "description": "To specify the image file output path."
     },
     "outputPath": {
