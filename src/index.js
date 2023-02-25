@@ -70,7 +70,7 @@ export default function loader(source) {
   const { outputPath, publicPath, postTransformPublicPath, context, emitFile } = options;
   const esModule = options.esModule || DEFAULT_ES_MODULE;
   let name = options.name || DEFAULT_NAME;
-  if (options.compress && options.compress.webp && /(png|jpe?g)$/i.test(ext)) {
+  if (options.compress && options.compress.webp && /(png|jpe?g)$/i.test(ext) && typeof name === 'string ) {
     name = name.replace('[ext]', 'webp');
   }
   validateOptions(schema, options, 'image-optimize-loader');
